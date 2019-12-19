@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>todos</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="head">
+            <h1>todos</h1>
+            <img src="images/1.png" class="alltick">
+            <input class="input" placeholder="What need to be done?">
+        </div>
+        <div class="list">
+            <ul>
+                <!-- <li class="listyle" id="list0">
+                        <input type="checkbox" class="check">
+                        <img src="./images/3.png" class="tick">
+                        <input type="text" class="toggle">
+                        <button class="destroy"></button>
+           </li>
+                <li class="listyle" id="list1">
+                        <input type="checkbox" class="check" >
+                    <img src="./images/3.png" class="tick">
+                    <input type="text" class="toggle">
+                    <button class="destroy"></button>
+            </li>
+            <li class="listyle" id="list2">
+                    <input type="checkbox" class="check">
+                <img src="./images/3.png" class="tick">
+                <input type="text" class="toggle">
+                <button class="destroy"></button>
+        </li>  -->
+                
+            </ul>
+        </div>
+        <div class="footer">
+            <span class="count">
+                <strong>0</strong>
+                <span> </span>
+                <span>item</span>
+                <span> left</span>
+            </span>
+            <div class="filter">
+                <div class="active all" tick="all">All</div>
+                <div tick="active" class="act">Active</div>
+                <div tick="completed" class="com">Completed</div>
+            </div>
+            <button class="clear">Clear completed</button>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
