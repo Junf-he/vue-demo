@@ -36,7 +36,7 @@
                 <input type="text" class="toggle">
                 <button class="destroy"></button>
         </li>  -->
-        <li class="listyle" v-for="item in list">
+        <li class="listyle" v-for="item in listItems">
             <input type="checkbox" class="check" v-model="item.checked">
             <img src="./images/3.png" class="tick">
             <input type="text" class="toggle" v-model="item.title">
@@ -46,15 +46,15 @@
         </div>
         <div class="footer">
             <span class="count">
-                <strong>0</strong>
+                <strong>{{count}}</strong>
                 <span> </span>
                 <span>item</span>
                 <span> left</span>
             </span>
             <div class="filter">
-                <div class="active all" tick="all">All</div>
-                <div tick="active" class="act">Active</div>
-                <div tick="completed" class="com">Completed</div>
+                <div class="active all" tick="all" @click="filterItems(1)">All</div>
+                <div tick="active" class="act" @click="filterItems(2)">Active</div>
+                <div tick="completed" class="com" @click="filterItems(3)">Completed</div>
             </div>
             <button class="clear" @click="clearCompleted">Clear completed</button>
         </div>

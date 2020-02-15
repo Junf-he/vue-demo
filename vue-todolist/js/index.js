@@ -1,8 +1,23 @@
+var list = JSON.parse(localStorage.getItem("items")) || []
 var vm = new Vue({
     el:'.wrapper',
+    watch:{
+        list:{
+            deep:true,
+            handler:function(){
+                localStorage.setItem("items",JSON.stringify(this.list))
+            }
+        }
+    },
     data:{
-        inputValue:"123",
-        list:[]
+        inputValue:"",
+        list:list,
+        listItems:[]
+    },
+    computed:{
+        count(){
+            return this.list.filter(function(item){return !item.checked}).length
+        }
     },
     methods:{
         addValue:function(){
@@ -18,6 +33,15 @@ var vm = new Vue({
             var index = this.list.indexOf(item);
             this.list.splice(index,1);
         },
+        filterItems:function(status){
+            if(status==2){
+                this.listItems=this.list.filter(function(item){return !item.checked})
+            }else if(status==3){
+                this.listItems=this.list.filter(function(item){return item.checked})
+            }else{
+                this.listItems=this.list
+            }
+        },
         clearCompleted:function(){
             var newArr = this.list;
             newArr.map(function(item,index){
@@ -29,3 +53,4 @@ var vm = new Vue({
         }
     }
 })
+    vm.filterItems(1);
